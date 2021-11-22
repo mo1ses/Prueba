@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
+    attributes:
+      user:
+        email: 'Correo electrónico'
+        modafemenina: 'Moda femenina'
+        modamasculina: 'Moda de hombres'
+        modainfantil: 'Moda infantil'
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: 'debe de ingresar el Correo'
+              taken: 'este Correo ya existe'

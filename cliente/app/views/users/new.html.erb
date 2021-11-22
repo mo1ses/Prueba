@@ -1,0 +1,54 @@
+<section class="content">
+	<div class="container-fluid" align="center">
+		<h1>micolet</h1>
+		<h4>Welcome! soon we will launch or site in this country</h4>
+
+		<h4>Subscribe to receive our newsletter</h4>
+		<%= form_for @user do |f| %>
+			<% if @user.errors.any? %>
+			  	<div id="error_explanation">
+				    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+				    <ul>
+				      	<% @user.errors.each do |error| %>
+				        <li><%= error.full_message %></li>
+				      	<% end %>
+				    </ul>
+			  	</div>
+			<% end %>
+
+			<div class="field" >
+				<%= f.label :email, class: 'label', value: 'Email' %>
+				<div class="control">
+					<%= f.text_field :email, class: 'input' %>
+				</div>
+				<% if @user.errors[:email].any? %>
+				<div class="help is-danger">
+					<%= @user.errors[:email].first %>
+				</div>
+				<% end %>	
+			</div>
+			<div class="field">
+				Preferences
+			</div>
+
+			<div class="field">
+				<%= f.check_box :modafemenina %>
+				<%= f.label :modafemenina, value: "Women's Fashion" %>
+			</div>
+			<div class="field">
+				<%= f.check_box :modamasculina %>
+				<%= f.label :modamasculina, value: "Men's Fashion" %>
+			</div>
+			<div class="field">
+				<%= f.check_box :modainfantil %>
+				<%= f.label :modainfantil, value: "Children's Fashion" %>
+				
+			</div>
+
+			<div >
+				<%= f.submit class: 'button is-primary', value: 'Subscribe me!' %>
+			</div>
+		<% end %>
+	</div>	
+</section>
